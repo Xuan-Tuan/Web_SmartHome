@@ -1,9 +1,9 @@
-import "./App.css";
-
+import { RouterProvider } from "react-router-dom";
+import { browserRouter } from "./routes";
 function App() {
   return (
     <>
-      <div className="bg-uit border-4 text-red-700">YOUR SMART HOME</div>
+      <RouterProvider router={browserRouter} />
     </>
   );
 }

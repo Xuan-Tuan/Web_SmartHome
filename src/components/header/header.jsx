@@ -30,7 +30,7 @@ export default function Header() {
         </NavLink>
       </nav>
       <div className="flex items-center justify-between mx-6">
-        <div>
+        <div className="">
           <input
             type="text"
             placeholder="Tìm kiếm"

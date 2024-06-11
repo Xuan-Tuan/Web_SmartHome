@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa";
 import { useUser } from "../../UserContext/userContext";
+import { NavLink } from "react-router-dom";
 
 const handleLogOut = () => {
   localStorage.clear();
@@ -21,6 +22,28 @@ export const AvatarAccount = () => {
           onClick={() => setIsLogoutVisible(!isLogoutVisible)}
         />
       </div>
+      {isLogoutVisible && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+          <div className="bg-white p-6 rounded-lg flex flex-col items-center justify-between ">
+            <div className="text-xl mb-4 font-bold text-uit">
+              Xác nhận đăng xuất tài khoản của bạn ?
+            </div>
+            <div className="flex flex-row items-center justify-between">
+              <NavLink to={"/login"} onClick={handleLogOut}>
+                <button className="bg-red-500 px-4 py-2 rounded-xl mr-2 w-28">
+                  Đăng xuất
+                </button>
+              </NavLink>
+              <button
+                className="bg-green-500 px-4 py-2 rounded-xl mr-2 w-28"
+                onClick={() => setIsLogoutVisible(!isLogoutVisible)}
+              >
+                Hủy
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

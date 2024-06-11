@@ -9,9 +9,7 @@ export default function User({ children }) {
         <div>
           <Header />
         </div>
-        <div className="lg:h-[calc(100vh-70px-50px-20px-20px)] mt-[70px] mb-[50px] h-auto">
-          {children}
-        </div>
+        <div>{children}</div>
         <div>
           <Footer />
         </div>
